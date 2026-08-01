@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y ca-certificates
 # Build for builder
 WORKDIR /opt/
 COPY . .
-RUN DC=ldc2 dub build -c "static" --build-mode allAtOnce -b release --compiler=ldc2
+RUN DC=ldc2 dub build -c "static" --build-mode allAtOnce -b release --compiler=dmd
 
 # Base for run
 FROM debian:stable-slim
